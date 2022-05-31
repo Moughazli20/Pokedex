@@ -2,14 +2,14 @@ import React  from "react";
 
 function Pokemon({id, name, image, type}) {
 
-    const style = `thum-container ${type}`
+    const style = `container ${type}`
     return(
         <div className={style}>
             <div className="number">
                 <small>#0{id}</small>
             </div>
             <img src={image} alt={name}/>
-            <div className="detail-wrapper">
+            <div className="detail">
                 <h3>{name}</h3>
                 <small>Type: {type}</small>
             </div>

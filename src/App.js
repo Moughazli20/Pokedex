@@ -5,10 +5,10 @@ import Pokemon from './components/Pokemon';
 
 function App() {
 
-  const [allPokemons, setAllPokemons] = useState([])
+  const [Pokemons, setPokemons] = useState([])
   const [loadMore, setLoadMore] = useState('https://pokeapi.co/api/v2/pokemon?limit=20')
 
-  const getAllPokemons = async() => {
+  const getPokemons = async() => {
 
     const res = await fetch(loadMore)
     const data = await res.json()
@@ -21,24 +21,24 @@ function App() {
           const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`)
           const data = await res.json()
 
-          setAllPokemons(currentList => [...currentList, data])
+          setPokemons(currentList => [...currentList, data])
           
         })
     }
     createPokemonObject(data.results)
-    await console.log(allPokemons)
+    await console.log(Pokemons)
   }
 
   useEffect(() => {
-    getAllPokemons()
+    getPokemons()
   }, [])
 
   return (
     <div className="app-container">
-      <h1>Pokemon Evolution</h1>
+      <h1>Pokemons</h1>
       <div className='pokemon-container'>
         <div className='all-container'>
-            {allPokemons.map((pokemon, index) => 
+            {Pokemons.map((pokemon, index) => 
               <Pokemon 
               id = {pokemon.id}
               name = {pokemon.name}
@@ -47,7 +47,7 @@ function App() {
               key={index}/>
               )}
         </div>
-        <button className='load-more' onClick={() => getAllPokemons()}>Load More</button>
+        <button className='load-more' onClick={() => getPokemons()}>Afficher plus</button>
       </div>
     </div>
   );

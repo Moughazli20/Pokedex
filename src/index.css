@@ -62,7 +62,7 @@ code {
   align-items: center;
   justify-content: center;
 }
-.thum-container{
+.container{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -78,24 +78,24 @@ code {
 h3 {
   margin-bottom: 0.2rem;
 }
-.thum-container .number {
+.container .number {
   border-radius: 1rem;
   padding: 0.2rem 0.4rem;
   background-color: rgba(255,255,255,0.3);
 }
-.thum-container img {
+.container img {
   width: 120px;
   height: 120px;
 }
-.thum-container small {
+.container small {
   text-transform: capitalize;
 }
-.detail-wrapper {
+.detail {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
-.detail-wrapper button {
+.detail button {
   color: rgb(22, 22, 22);
   padding: .5rem;
   margin-top: 1rem;
